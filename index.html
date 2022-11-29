@@ -1,62 +1,42 @@
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="canvas.css" />
-    <link rel="stylesheet" href="present.css" />
-    <link rel="stylesheet" href="card.css" />
-    <link rel="stylesheet" href="index.css" />
-    <script src="jquery.js"></script>
-  </head>
-  <body>
-    <div class="parent">
-      <canvas id="canvas"></canvas>
-      <section class="above-fold">
-        <div class="wrap-present">
-          <div class="present-box" id="present">
-            <div class="present">
-              <div class="img-wrap" id="present-image"></div>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Happy Birthday Nam</title>
+        <link red="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <div class="box">
+                <div class="circle">
+                    <h2>Happy<br>Birthday</h2>
+                </div>
             </div>
-            <div class="side front"></div>
-            <div class="side back"></div>
-            <div class="side left"></div>
-            <div class="side right"></div>
-            <div class="side top">
-              <span class="to">
-                <span class="name" id="nametag"> </span>
-              </span>
-            </div>
-            <div class="side bottom"></div>
-          </div>
-        </div>
-        <p class="info-text">Click to Open</p>
-      </section>
+        </section>
+        <script>
+            function bubbles(){
+                var count = 200;
+                var section = document.querySelector('section');
+                var i = 0;
+                while(i < count){
+                    var bubble = document.createElement('i');
+                    var x = Math.floor(Math.random() * window.innerWidth);
+                    var y = Math.floor(Math.random() * window.innerHeight);
 
-      <div id="card">
-        <h4 class="title-card">💘little coder💘</h4>
+                    var size = Math.random() * 10;
+                    bubble.style.left = x+'px';
+                    bubble.style.top = y+'px';
+                    bubble.style.width = 1+size+'px';
+                    bubble.style.height = 1+size+'px';
 
-        <img
-          src="ALE09424.jpg"
-          class="honey"
-        />
+                    bubble.style.animationDuration = 5+size+'s';
+                    bubble.style.animationDelay = -size+'s';
 
-        <h4 class="content-card">
-          Happy Birthday Make A Wish. Dear brother, hope you receive everything
-          you wish for this year. You deserve the best! Thanks for being such a
-          great brother.💘
-        </h4>
-      </div>
-    </div>
-    <audio autoplay loop  id="playAudio">
-      <source src="nhacnen.mp3">
-    </audio>
-  </body>
-  <script src="config.js"></script>
-  <script src="canvas.js"></script>
-  <script src="present.js"></script>
-  <script>
-    
-  </script>
-</html>
+                    section.appendChild(bubble);
+                    i++
+                }
+            }
+            bubbles()
+        </script>
+    </body>
+</html>    
